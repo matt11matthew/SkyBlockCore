@@ -1,0 +1,131 @@
+rewards:
+  TIER1:
+    rewards:
+      '1':
+        displayName: 'Wood'
+        displayIcon: 'WOOD;1;0'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '2':
+        displayName: 'Wood 1'
+        displayIcon: 'WOOD;1;1'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 2'
+        displayIcon: 'WOOD;1;2'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 3'
+        displayIcon: 'WOOD;1;3'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+  TIER2:
+    rewards:
+      '1':
+        displayName: 'Wood'
+        displayIcon: 'WOOD;1;0'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '2':
+        displayName: 'Wood 1'
+        displayIcon: 'WOOD;1;1'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 2'
+        displayIcon: 'WOOD;1;2'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 3'
+        displayIcon: 'WOOD;1;3'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+  TIER3:
+    rewards:
+      '1':
+        displayName: 'Wood'
+        displayIcon: 'WOOD;1;0'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '2':
+        displayName: 'Wood 1'
+        displayIcon: 'WOOD;1;1'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 2'
+        displayIcon: 'WOOD;1;2'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 3'
+        displayIcon: 'WOOD;1;3'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+  TIER4:
+    rewards:
+      '1':
+        displayName: 'Wood'
+        displayIcon: 'WOOD;1;0'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '2':
+        displayName: 'Wood 1'
+        displayIcon: 'WOOD;1;1'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 2'
+        displayIcon: 'WOOD;1;2'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 3'
+        displayIcon: 'WOOD;1;3'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+  TIER5:
+    rewards:
+      '1':
+        displayName: 'Wood'
+        displayIcon: 'WOOD;1;0'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '2':
+        displayName: 'Wood 1'
+        displayIcon: 'WOOD;1;1'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 2'
+        displayIcon: 'WOOD;1;2'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'
+      '3':
+        displayName: 'Wood 3'
+        displayIcon: 'WOOD;1;3'
+        commands:
+        - 'give <player> WOOD 1'
+        - 'say test'

@@ -1,0 +1,15 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+CloudSkyblock.iml
+TempSkyblock.iml
+target/
+dependency-reduced-pom.xml
+.idea/workspace.xml
+CloudSkyblock.iml
+outputs/
+*.jar
+builds/
+C:/Users/matt1/Desktop/CloudEscape Setup/Game Servers/SkyFall/plugins/CloudSkyBlock.jar
+.DS_Store
+*.jar
+/outputs/

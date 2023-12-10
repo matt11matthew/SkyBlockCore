@@ -1,0 +1,8 @@
+name: CloudSkyblock
+main: net.cloudescape.skyblock.CloudSkyblock
+version: 1.0
+#load: STARTUP
+#authors: [ThatAbstractWolf, ChronicNinjaz, MatthewE]
+depend: [CloudCore, WorldEdit,InventoryCore]
+commands:
+  help:

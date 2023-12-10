@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.cloudescape.skyblock</groupId>
+    <artifactId>cloudskyblock</artifactId>
+    <version>1.0</version>
+    <name>Cloud Skyblock</name>
+
+    <!--
+    When deploying with Maven version numbers are
+    Important! Please structure the version number like so:
+
+    #.#.#
+
+    #1 = Release number - for example version 1.0, 2.0 etc
+    #2 = Update number - for example update 1.2 or 1.3 etc (typically updated once you reach #.#.9
+    #3 = Build number - for example update 1.2.3 would be release 1, update 2, 3rd time being built.
+
+    If you wish to push to a Snapshot version (which should be used whilst testing and in development,
+    please apply -SNAPSHOT to the end of the version: 1.0.0-SNAPSHOT
+    -->
+
+    <distributionManagement>
+        <repository>
+            <id>CloudEscape-Nexus</id>
+            <url>http://node1.cloudescape.net:8081/repository/cloudescape-maven/</url>
+        </repository>
+        <snapshotRepository>
+            <id>CloudEscape-Nexus</id>
+            <url>http://node1.cloudescape.net:8081/repository/cloudescape-maven/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <finalName>CloudSkyBlock</finalName>
+                    <!--<outputDirectory>${basedir}/builds/</outputDirectory>-->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <finalName>CloudSkyBlock</finalName>
+                    <!--<minimizeJar>true</minimizeJar>-->
+                    <!--<outputDirectory>${basedir}/outputs/${version}/</outputDirectory>-->
+                    <!--<outputFile>${basedir}/builds/CloudSkyBlock.jar</outputFile>-->
+
+                    <artifactSet>
+                        <excludes>
+                            <!--<exclude>net.cloudescape.backend.masterserver:commons</exclude>-->
+                            <!--<exclude>net.cloudescape.backend.masterserver:clientapi</exclude>-->
+                        </excludes>
+                    </artifactSet>
+                    <!-- put your configurations here -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>MattEBuild</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>2.3.1</version>
+                        <configuration>
+                            <finalName>CloudSkyBlock</finalName>
+
+                            <!--<outputDirectory>${basedir}/outputs/${version}/</outputDirectory>-->
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>8</source>
+                            <target>8</target>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-shade-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <finalName>CloudSkyBlock</finalName>
+                            <minimizeJar>true</minimizeJar>
+                            <!--<outputFile>C:\Users\matt1\Desktop\CloudEscape Setup\Game Servers\SkyFall\plugins\CloudSkyBlock.jar</outputFile>-->
+
+                            <artifactSet>
+                                <excludes>
+                                    <!--<exclude>net.cloudescape.backend.masterserver:commons</exclude>-->
+                                    <!--<exclude>net.cloudescape.backend.masterserver:clientapi</exclude>-->
+                                </excludes>
+                            </artifactSet>
+                            <!-- put your configurations here -->
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>shade</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+        <profile>
+            <id>ThatAbstractWolf</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>2.3.1</version>
+                        <configuration>
+                            <finalName>CloudSkyBlock</finalName>
+                            <outputDirectory>${basedir}/outputs/${version}/</outputDirectory>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <source>8</source>
+                            <target>8</target>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-shade-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <finalName>CloudSkyBlock</finalName>
+                            <minimizeJar>true</minimizeJar>
+
+                            <artifactSet>
+                                <excludes>
+                                    <!--<exclude>net.cloudescape.backend.masterserver:commons</exclude>-->
+                                    <!--<exclude>net.cloudescape.backend.masterserver:clientapi</exclude>-->
+                                </excludes>
+                            </artifactSet>
+                            <!-- put your configurations here -->
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>shade</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+    <!-- Repositories -->
+    <repositories>
+        <repository>
+            <id>CloudEscape-Nexus</id>
+            <url>http://node1.cloudescape.net:8081/repository/cloudescape-maven/</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>http://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>FastAsyncWorldEdit</id>
+            <url>http://ci.athion.net/job/FastAsyncWorldEdit/ws/mvn/</url>
+        </repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>http://repo.dmulloy2.net/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <!-- Build Properties -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <server.jars>${project.basedir}/lib</server.jars>
+    </properties>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.12.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>me.matthewe.atherial.api</groupId>-->
+            <!--<artifactId>atherialapi</artifactId>-->
+            <!--<version>1.0.2-SNAPSHOT</version>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>co.aikar</groupId>-->
+            <!--<artifactId>taskchain-bukkit</artifactId>-->
+            <!--<version>3.6.0</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-mongodb-gridfs -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-mongodb-gridfs</artifactId>
+            <version>2.21.0</version>
+            <scope>compile</scope>
+        </dependency><!-- https://mvnrepository.com/artifact/com.mongodb.casbah/gridfs -->
+        <dependency>
+            <groupId>com.mongodb.casbah</groupId>
+            <artifactId>gridfs_2.8.1</artifactId>
+            <version>2.0b2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>1.12.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.cloudescape.backend.masterserver</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.12.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.projectlombok</groupId>-->
+            <!--<artifactId>lombok</artifactId>-->
+            <!--<version>1.16.18</version>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.boydti</groupId>
+            <version>latest</version>
+            <scope>provided</scope>
+            <artifactId>fawe-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sk89q.worldedit</groupId>
+            <artifactId>worldedit-bukkit</artifactId>
+            <scope>provided</scope>
+            <version>6.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.cloudescape.backend.masterserver</groupId>
+            <artifactId>commons</artifactId>
+            <version>1.0.3</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.cloudescape</groupId>
+            <artifactId>CECore</artifactId>
+            <version>1.3.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>1.3.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>me.matthewe.atherial.api</groupId>
+            <artifactId>atherialapi</artifactId>
+            <version>1.0.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+    </dependencies>
+</project>
